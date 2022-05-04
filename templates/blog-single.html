@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hexagon - Agency, Startup and SaaS template</title>
+	<meta name="description" content="Hexagon is a Agency, Startup and SaaS template by tempload." />
+	<meta name="keywords" content="hexagon, startup, saas, agency, development, html, template, tempload" />
+	<meta name="author" content="tempload"/>
+
+	<link rel="icon" type="image/png" href="assets/images/favicon/favicon.png" />
+
+	<!-- Bootstrap & Plugins CSS -->
+	<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/orange.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	
+	<!-- ***** Header Area Start ***** -->
+	<header class="header-area header-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="main-nav">
+						<!-- ***** Logo Start ***** -->
+						<a href="orange-index.html" class="logo">
+							<img src="assets/images/logo-orange.png" alt="Hexagon"/>
+						</a>
+						<!-- ***** Logo End ***** -->
+
+
+						<!-- ***** Menu Start ***** -->
+						<ul class="nav">
+							<li><a href="orange-index.html#welcome">Home</a></li>
+							<li class="submenu">
+								<a href="javascript:;">Discover</a>
+								<ul>
+									<li><a href="orange-index.html#features">Features</a></li>
+									<li><a href="orange-index.html#testimonials">Testimonials</a></li>
+									<li><a href="orange-index.html#pricing-plans">Pricing Plans</a></li>
+									<li><a href="orange-index.html#blog">Latests Blogs</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:;">Pages</a>
+								<ul>
+									<li><a href="orange-about.html">About Us</a></li>
+									<li><a href="orange-features.html">Features</a></li>
+									<li><a href="orange-faq.html">FAQ's</a></li>
+									<li><a href="orange-blog.html">Blog</a></li>
+								</ul>
+							</li>
+							<li><a href="orange-contact.html">Contact</a></li>
+							<li><a href="#" class="btn-nav-line"><span>Free Try</span></a></li>
+						</ul>
+						<a class='menu-trigger'>
+							<span>Menu</span>
+						</a>
+						<!-- ***** Menu End ***** -->						
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ***** Header Area End ***** -->
+
+
+	<section class="page">
+		<!-- ***** Page Top Start ***** -->
+		<div class="cover" data-image="assets/images/photos/parallax-counter.jpg">
+			<div class="page-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<h1>How to select the best channel manager for your hotel?</h1>
+						</div>
+						<div class="col-lg-12">
+							<ol class="breadcrumb">
+								<li><a href="orange-index.html">Home</a></li>
+								<li><a href="orange-blog.html">Blog</a></li>
+								<li class="active">Blog Single</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ***** Page Top End ***** -->
+
+		<!-- ***** Page Content Start ***** -->
+		<div class="page-bottom">
+			<div class="container">
+				<div class="row">
+					<!-- ***** Page Content Start ***** -->
+					<div class="col-lg-8 col-md-12 col-sm-12">
+						<div class="blog-list">
+							<div class="row">
+								<!-- ***** Blog Post Start ***** -->
+								<div class="col-lg-12">
+									<div class="blog-post-thumb big">
+										<!-- ***** Post Top Start ***** -->
+										<div class="img">
+											<img src="{{blogcards.cardimg.url}}" alt="">
+											<div class="date">
+												<strong>APR</strong>
+												<span>09</span>
+											</div>
+										</div>
+										<ul class="post-meta margin-bottom-20">
+											<li><a href="#"><span class="icon fa fa-user"></span>by Hexagon</a></li>
+											<li><a href="#"><span class="icon fa fa-comment-o"></span>3 Comments </a></li>
+										</ul>
+										<!-- ***** Post Top End ***** -->
+
+										<!-- ***** Post Content Start ***** -->
+										<div class="text post-detail">
+											<p>{{blogcards.cardpara1}}</p>
+											<p>{{blogcards.cardpara2}}</p>
+										
+										</div>
+										<!-- ***** Post Content End ***** -->
+
+										<!-- ***** Post Share Start ***** -->
+										<div class="post-footer">
+											<span>Share - </span>
+											<ul class="share">
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+												<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+											</ul>
+										</div>
+										<!-- ***** Post Share End ***** -->
+									</div>
+								</div>
+								<!-- ***** Blog Post End ***** -->
+							</div>
+						</div>
+					</div>
+					<!-- ***** Page Content End ***** -->
+
+					<!-- ***** Aside Start ***** -->
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<aside class="default-aside">
+							<div class="sidebar">
+								<div class="search-widget">
+									<div class="search">
+										<form>
+											<input type="text" placeholder="Search">
+											<button type="submit"><i class="fa fa-search"></i></button>
+										</form>
+									</div>
+								</div>
+								<ul>
+									<li><a href="#">Cloud PMS <span>23</span></a></li>
+									<li><a href="#">Desktop PMS <span>12</span></a></li>
+									<li><a href="#">Hotel Software <span>153</span></a></li>
+									<li><a href="#">Social Media <span>9</span></a></li>
+									<li><a href="#">General <span>95</span></a></li>
+									<li><a href="#">Marketing <span>32</span></a></li>
+									<li><a href="#">Mobile Future <span>76</span></a></li>
+								</ul>
+
+								<div class="widget-tags">
+									<a href="#">Team</a>
+									<a href="#">Hotel</a>
+									<a href="#">Android</a>
+									<a href="#">App</a>
+									<a href="#">Software</a>
+									<a href="#">Development</a>
+									<a href="#">API</a>
+									<a href="#">Store</a>
+									<a href="#">Reservation</a>
+									<a href="#">Analytics</a>
+									<a href="#">Support</a>
+									<a href="#">Coding</a>
+									<a href="#">Database</a>
+								</div>
+							</div>
+						</aside>
+					</div>
+					<!-- ***** Aside End ***** -->
+
+				</div>
+			</div>
+		</div>
+		<!-- ***** Page Content End ***** -->
+	</section>
+
+
+	
+	<!-- ***** Footer Start ***** -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 col-sm-12">
+					<img src="assets/images/logo-orange.png" class="logo" alt="">
+					<div class="text">Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-6">
+					<h5>Helpful Links</h5>
+					<ul class="footer-nav">
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>About Us</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>Features</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>FAQ’s</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>Blog</span></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-6">
+					<h5>Support</h5>
+					<ul class="footer-nav">
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>Privacy Policy</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>Terms of Use</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>Support Center</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>Contact</span></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-12">
+					<h5>Contact Us</h5>
+					<div class="address">
+						<p>455 West Orchard Street<br>Kings Mountain, NC 28086</p>
+						<p>Phone: (272) 211-7370</p>
+						<p><span>E-Mail:</span><a href="#">support@yourbrand.com</a></p>
+						<ul class="social">
+							<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-github-square"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="copyright">© 2021 Hexagon. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ***** Footer End ***** -->
+
+
+
+	<!-- jQuery -->
+	<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+	<script src="{% static 'assets/js/parallax.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'assets/js/imgfix.min.js' %}"></script>	
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

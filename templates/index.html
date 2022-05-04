@@ -1,0 +1,559 @@
+{% load static %}
+{%load mathfilters%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hexagon - Agency, Startup and SaaS template</title>
+	<meta name="description" content="Hexagon is a Agency, Startup and SaaS template by tempload." />
+	<meta name="keywords" content="hexagon, startup, saas, agency, development, html, template, tempload" />
+	<meta name="author" content="tempload"/>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="static/assets/images/favicon/favicon.png" />
+
+	<!-- Bootstrap & Plugins CSS -->
+	<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'assets/css/orange.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- ***** Header Area Start ***** -->
+	<header class="header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="main-nav">
+						<!-- ***** Logo Start ***** -->
+						<a href="#" class="logo">
+							<img src='{{logo.logo.url}}' alt="Hexagon"/>
+						</a>
+						<ul class="nav">
+							<li><a href="#" style="color: black;">Home</a></li>
+							<li class="submenu">
+								<a href="javascript:;" style="color: black;">Discover</a>
+								<ul>
+									<li><a href="#features">Features</a></li>
+									<li><a href="#testimonials">Testimonials</a></li>
+									<li><a href="#pricing-plans">Pricing Plans</a></li>
+									<li><a href="#blog">Latests Blogs</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:;">Pages</a>
+								<ul>
+									<li><a href="{% url 'about' %}">About Us</a></li>
+									<li><a href="{% url 'faq' %}">FAQ's</a></li>
+									<li><a href="{% url 'blog' %}">Blog</a></li>
+								</ul>
+							</li>
+							<li><a href="{% url 'contact' %}">Contact</a></li>
+							<li><a href="{% url 'secondpage' %}" class="btn-nav-line"><span>My Page</span></a></li>
+							<li><a href="{% url 'sign-up' %}" class="btn-nav-line"><span>Sign up</span></a></li>
+						</ul>
+						<a class='menu-trigger'>
+							<span>Menu</span>
+						</a>
+						<!-- ***** Menu End ***** -->						
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ***** Header Area End ***** -->
+
+
+	<!-- ***** Welcome Area Start ***** -->
+	<div class="welcome-area" id="welcome">
+		<!-- ***** Header Background Image Start ***** -->
+		<div class="right-bg">
+			<img src="{% static 'assets/images/photos/header.jpg' %}" class="img-fluid float-right" alt="">
+		</div>
+		<!-- ***** Header Background Image End ***** -->
+
+		<div class="header-hexagon-bg">
+			<img src="{% static 'assets/images/header-bg.svg' %}" class="img-fluid" alt="">
+		</div>
+
+		<!-- ***** Header Text Start ***** -->
+		<div class="header-text">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-12 col-sm-12">
+						<h1>{{title}}</h1>
+						<p>{{para.para}}</p>
+						<div class="email-box">
+							<div class="input">
+								<form action="{% url 'emailsent' %}" method="post">
+									{% csrf_token %}
+									<input type="email" name='email' placeholder="Enter your email" required>
+									<button>Get started</button>
+								</form>
+							</div>
+							<span>30-day FREE trial - no credit card needed</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ***** Header Text End ***** -->
+
+		<!-- ***** Play Button Start ***** -->
+		<div class="play-button-wrapper">
+			<a href="{{link.link}}" class="btn-play">
+				<i class="fa fa-play"></i>
+			</a>
+		</div>
+		<!-- ***** Play Button End ***** -->
+	</div>
+	<!-- ***** Welcome Area End ***** -->
+
+
+	<!-- ***** Features Small Start ***** -->
+	<section class="section" id="features">
+		<div class="container">
+			<!-- ***** Section Title Start ***** -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="center-heading">
+						<h2 class="section-title">{{business.title}}</h2>
+					</div>
+				</div>
+				<div class="offset-lg-3 col-lg-6">
+					<div class="center-text">
+						<p>{{business.paragraph}}</p>
+					</div>
+				</div>
+			</div>
+			<!-- ***** Section Title End ***** -->
+
+			<div class="row">
+				{% for i in businesscard %}
+				<!-- ***** Features Small Item Start ***** -->
+				<div class="col-lg-3 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+					<a href="features-single.html" class="features-small-item">
+						<div class="icon">
+							<div class="hexagon-bg"></div>
+							<i class="fa fa-{{i.logo}}"></i>
+						</div>
+						<h5 class="features-title">{{i.title}}</h5>
+						<p>{{i.paragraph}}</p>
+					</a>
+				</div>
+				{% endfor %}
+				<!-- ***** Features Small Item End ***** -->
+		</div>
+	</section>
+	<!-- ***** Features Small End ***** -->
+
+
+	<!-- ***** Features Big Item Start ***** -->
+	<section class="section white padding-bottom-top-60 border-bottom bg-center-right">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 align-self-center mobile-bottom-fix"  data-scroll-reveal="enter right move 30px over 0.6s after 0.3s">
+					<img src="{{reservation.image.url}}" class="img-fluid float-left" alt="App">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 align-self-center">
+					<div class="left-heading">
+						<h2 class="section-title">{{reservation.title}}</h2>
+					</div>
+					<div class="left-text">
+						<p>{{reservation.paragraph}}</p>
+						<ul>
+							<li>{{reservation.firstpara}}</li>
+							<li>{{reservation.secondpara}}</li>
+							<li>{{reservation.thirdpara}}</li>
+							<li>{{reservation.fourthpara}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ***** Features Big Item End ***** -->
+
+
+	<!-- ***** Features Big Item Start ***** -->
+	<section class="section white padding-bottom-top-60 bg-center-left">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 align-self-center">
+					<div class="left-heading">
+						<h2 class="section-title">{{reports.title}}</h2>
+					</div>
+					<div class="left-text">
+						<p>{{reports.paragraph}}</p>
+						<ul>
+							<li>{{reports.firstpara}}</li>
+							<li>{{reports.secondpara}}</li>
+							<li>{{reports.thirdpara}}</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+					<img src="{{reports.image.url}}" class="img-fluid float-left" alt="App">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ***** Features Big Item End ***** -->
+
+
+	<!-- ***** API Parallax Start ***** -->
+	<section class="parallax" data-image="{% static 'assets/images/photos/parallax.jpg' %}">
+		<div class="parallax-content">
+			<div class="container">
+				<div class="row">
+					<div class="offset-lg-2 col-lg-8">
+						<div class="info">
+							<p>{{sociallink.title}}</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- ***** API & SDK Buttons Start ***** -->
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 api-btn-content">
+						<a href="{{sociallink.firstlink}}" class="btn-api">
+							<i class="fa fa-{{sociallink.firstlogo}}"></i>
+							<span>{{sociallink.firstpara}}</span>
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 api-btn-content">
+						<a href="{{sociallink.secondlink}}" class="btn-api">
+							<i class="fa fa-{{sociallink.secondlogo}}"></i>
+							<span>{{sociallink.secondpara}}</span>
+						</a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 api-btn-content">
+						<a href="{{sociallink.thirdlink}}" class="btn-api">
+							<i class="fa fa-{{sociallink.thirdlogo}}"></i>
+							<span>{{sociallink.thirdpara}}</span>
+						</a>
+					</div>
+				</div>
+				<!-- ***** API & SDK Buttons End ***** -->
+			</div>
+		</div>
+	</section>
+	<!-- ***** API Parallax End ***** -->
+
+
+	<!-- ***** Testimonials Start ***** -->
+	<section class="section" id="testimonials">
+		<div class="container">
+			<!-- ***** Section Title Start ***** -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="center-heading">
+						<h2 class="section-title">{{testimonials.title}}</h2>
+					</div>
+				</div>
+				<div class="offset-lg-3 col-lg-6">
+					<div class="center-text">
+						<p>{{testimonials.paragraph}}</p>
+					</div>
+				</div>
+			</div>
+			<!-- ***** Section Title End ***** -->
+
+			<div class="row testimonials-wrapper">
+				<!-- ***** Testimonials Item Start ***** -->
+				{% for i in testimonialscard %}
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="testimonials-item">
+						<div class="hexagon-user">
+							<div class="hexagon-user-img">
+								<div class="hexagon-in1">
+									<div class="hexagon-in2" data-profile-img="{{i.image.url}}"></div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonials-content">
+							<h3 class="user-name">{{i.title}}</h3>
+							<span>{{i.neartitle}}</span>
+							<p>{{i.paragraph}}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<!-- ***** Testimonials Item End ***** -->
+			</div>
+		</div>
+	</section>
+	<!-- ***** Testimonials End ***** -->
+
+
+	<!-- ***** Pricing Plans Start ***** -->
+	<section class="section white bg-center-left" id="pricing-plans">
+		<div class="container">
+			<!-- ***** Section Title Start ***** -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="center-heading">
+						<h2 class="section-title">{{pricing.title}}</h2>
+					</div>
+				</div>
+				<div class="offset-lg-3 col-lg-6">
+					<div class="center-text">
+						<p>{{pricing.paragraph}}</p>
+					</div>
+				</div>
+			</div>
+			<!-- ***** Section Title End ***** -->
+
+			<div class="row">
+				<!-- ***** Pricing Item Start ***** -->
+				<div class="col-lg-4 col-md-4 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+					<div class="pricing-item">
+						<div class="pricing-header">
+							<h3 class="pricing-title">BASIC PLAN</h3>
+							<div class="number-hexagon">
+								<span>1</span>
+							</div>
+						</div>
+						<div class="pricing-body">
+							<div class="price-wrapper">
+								<span>with {{ skidka.basicskidka }}% discount</span>
+								<span class="currency">$</span>
+								<span class="price">{{ priceforbasic.basicpriced }}</span>
+								<span class="period">/Month</span>
+							</div>
+							<ul class="list">
+								<li class="active">Unlimited Reservations</li>
+								<li class="active">2 Clients and Products</li>
+								<li class="active">Invoicing and Payments</li>
+								<li class="active">Housekeeping Status</li>
+								<li>Data Security and Backups</li>
+								<li>Unlimited Staff Accounts</li>
+								<li>Web Booking Widget</li>
+								<li>Monthly Reports and Analytics</li>
+							</ul>
+						</div>
+						<div class="pricing-footer">
+							<a href="#">Select Plan</a>
+						</div>
+					</div>
+				</div>
+				<!-- ***** Pricing Item End ***** -->
+
+				<!-- ***** Pricing Item Start ***** -->
+				<div class="col-lg-4 col-md-4 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+					<div class="pricing-item active">
+						<div class="pricing-header">
+							<h3 class="pricing-title">ADVANCED PLAN</h3>
+							<div class="number-hexagon">
+								<span>2</span>
+							</div>
+						</div>
+						<div class="pricing-body">
+							<div class="price-wrapper">
+								<span>with {{skidka.advancedskidka}}% discount</span>
+								<span class="currency">$</span>
+								<span class="price">{{ priceforadvanced.advancepriced }}</span>
+								<span class="period">/Month</span>
+							</div>
+							<ul class="list">
+								<li class="active">Unlimited Reservations</li>
+								<li class="active">2 Clients and Products</li>
+								<li class="active">Invoicing and Payments</li>
+								<li class="active">Housekeeping Status</li>
+								<li class="active">Data Security and Backups</li>
+								<li class="active">Unlimited Staff Accounts</li>
+								<li>Web Booking Widget</li>
+								<li>Monthly Reports and Analytics</li>
+							</ul>
+						</div>
+						<div class="pricing-footer">
+							<a href="#">Select Plan</a>
+						</div>
+					</div>
+				</div>
+				<!-- ***** Pricing Item End ***** -->
+
+				<!-- ***** Pricing Item Start ***** -->
+				<div class="col-lg-4 col-md-4 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+					<div class="pricing-item">
+						<div class="pricing-header">
+							<h3 class="pricing-title">EXPERT PLAN</h3>
+							<div class="number-hexagon">
+								<span>3</span>
+							</div>
+						</div>
+						<div class="pricing-body">
+							<div class="price-wrapper">
+								<span>with {{skidka.expertskidka}}% discount</span>
+								<span class="currency">$</span>
+								<span class="price">{{ priceforexpert.expertpriced }}</span>
+								<span class="period">/Month</span>
+							</div>
+							<ul class="list">
+								<li class="active">Unlimited Reservations</li>
+								<li class="active">2 Clients and Products</li>
+								<li class="active">Invoicing and Payments</li>
+								<li class="active">Housekeeping Status</li>
+								<li class="active">Data Security and Backups</li>
+								<li class="active">Unlimited Staff Accounts</li>
+								<li class="active">Web Booking Widget</li>
+								<li class="active">Monthly Reports and Analytics</li>
+							</ul>
+						</div>
+						<div class="pricing-footer">
+							<a href="#">Select Plan</a>
+						</div>
+					</div>
+				</div>
+				<!-- ***** Pricing Item End ***** -->
+			</div>
+		</div>
+	</section>
+	<!-- ***** Pricing Plans End ***** -->
+
+
+	<!-- ***** Counter Parallax Start ***** -->
+	<section class="parallax-counter" data-image="{% static 'assets/images/photos/parallax-counter.jpg' %}">
+		<div class="parallax-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="count-item">
+							<strong>{{count.firstnumber}}</strong>
+							<span>Happy<br>Customer</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="count-item">
+							<strong>{{count.secondnumber}}</strong>
+							<span>Reservation<br>Request</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="count-item">
+							<strong>{{count.thirdnumber}}</strong>
+							<span>Color<br>Template</span>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="count-item">
+							<strong>{{count.fourthnumber}}</strong>
+							<span>Staff<br>Account</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ***** Counter Parallax End ***** -->
+
+
+	<!-- ***** Blog Start ***** -->
+	<section class="section white bg-center-left" id="blog">
+		<div class="container">
+			<!-- ***** Section Title Start ***** -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="center-heading">
+						<h2 class="section-title">{{blog.title}}</h2>
+					</div>
+				</div>
+				<div class="offset-lg-3 col-lg-6">
+					<div class="center-text">
+						<p>{{blog.paragraph}}</p>
+					</div>
+				</div>
+			</div>
+			<!-- ***** Section Title End ***** -->
+
+			<div class="row">
+				{% for i in blogcards %}
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="blog-post-thumb">
+						<div class="img">
+							<img src="{{i.cardimg.url}}" alt="">
+						</div>
+						<h3>
+							<a href="{% url 'blogsingleview' i.id %}">{{i.cardtitle}}</a>
+						</h3>
+						<div class="text">
+							{{i.cardpara}}
+						</div>
+						<a href="{% url 'blogsingleview' i.id %}" class="btn-primary-line">Read More</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- ***** Blog End ***** -->
+
+	
+	<!-- ***** Footer Start ***** -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 col-sm-12">
+					<img src="{{logo.logo.url}}" class="logo" alt="">
+					<div class="text">{{undersection.underlogopara}}</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-6">
+					<h5>{{undersection.firstcolumntitle}}</h5>
+					<ul class="footer-nav">
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.firstfirpara}}</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.firstsecpara}}</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.firstthipara}}</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.firstfoupara}}</span></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-6 col-6">
+					<h5>{{undersection.secondcolumntitle}}</h5>
+					<ul class="footer-nav">
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.secondfirpara}}</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.secondsecpara}}</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.secondthipara}}</span></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i><span>{{undersection.secondfoupara}}</span></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-12" id="contact">
+					<h5>{{undersection.contactcolumntitle}}</h5>
+					<div class="address">
+						<p>{{undersection.address}}</p>
+						<p>{{undersection.phone}}</p>
+						<p><span>E-Mail:</span><a href="#">{{undersection.email}}</a></p>
+						<ul class="social">
+							<li><a href="#"><i class="fa fa-{{undersection.firstlogo}}-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-{{undersection.secondlogo}}-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-{{undersection.thirdlogo}}-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-{{undersection.fourthlogo}}-square"></i></a></li>
+							<li><a href="#"><i class="fa fa-{{undersection.fifthlogo}}-square"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="copyright">© {{reserved.date}} Andijan. All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ***** Footer End ***** -->
+
+
+
+	<!-- jQuery -->
+	<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+	<script src="{% static 'assets/js/parallax.min.js'  %}"></script>
+	<script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'assets/js/imgfix.min.js' %}"></script>	
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>
